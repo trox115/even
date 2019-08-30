@@ -1,24 +1,34 @@
-# README
+# Ruby on Rails Event App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the sample application for an a event APP
 
-Things you may want to cover:
+## License
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Getting started
 
-* Database creation
+To get started with the app, clone the repo and then install the needed gems:
 
-* Database initialization
+```
+$ bundle install --without production
+```
 
-* How to run the test suite
+Next, migrate the database:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+Finally, run the test suite to verify that everything is working correctly:
 
-* ...
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
