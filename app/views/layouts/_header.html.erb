@@ -1,11 +1,18 @@
  <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "EvEnT APP", '#', id: "logo" %>
+        <%= link_to "EvEnT APP", root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
+            <li><%= link_to "Home",   root_path %></li>
+            <% if !logged_in?%>
             <li><%= link_to "Help",   '#' %></li>
             <li><%= link_to "Log in", login_path %></li>
+            <% else %>
+            <li><%= link_to "Hello, #{current_user.name}",   current_user %></li>
+            <li><%= link_to "Events", '#' %></li>
+            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+            <% end %>
+
           </ul>
         </nav>
       </div>

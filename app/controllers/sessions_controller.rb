@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+before_action :not_logged_in, only: %i[new create]
   def new; end
 
   def create
@@ -15,7 +16,10 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+   log_out
+   redirect_to root_path
+  end
 
   private
 

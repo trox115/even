@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :not_logged_in, only: %i[new create]
+  before_action :logged_in, only: %i[show]
   def index
   @users=User.all
   end
